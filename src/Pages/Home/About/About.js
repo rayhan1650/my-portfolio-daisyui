@@ -3,8 +3,10 @@ import Me from "../../../assets/images/me.png";
 
 const About = () => {
   return (
-    <section className="my-8" id="about">
-      <h2 className="text-4xl text-center font-bold text-primary">About Me</h2>
+    <section className="my-12" id="about">
+      <h2 className="text-4xl text-center font-bold text-primary lg:pt-14">
+        About Me
+      </h2>
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="hover:ring ring-primary ring-offset-base-100 ring-offset-2 lg:w-full">
@@ -25,7 +27,9 @@ const About = () => {
               studying and learning new technologies. I have done some projects
               on react and NodeJs.
             </p>
-            <button className="btn btn-primary">Contact Me</button>
+            <a href="#contact" className="btn btn-primary">
+              Contact Me
+            </a>
           </div>
         </div>
       </div>

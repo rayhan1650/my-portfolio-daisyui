@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100 z-50 sticky top-0">
+    <div className="navbar  bg-indigo-500 z-50 sticky top-0">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -39,14 +39,14 @@ const Header = () => {
               <a>Skills</a>
             </li>
             <li>
-              <a>Contact Me</a>
+              <a href="#contact">Contact Me</a>
             </li>
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl">Rayhan</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="menu menu-horizontal text-white  p-0">
           <li>
             <a>Home</a>
           </li>
@@ -61,7 +61,7 @@ const Header = () => {
             <a>Skills</a>
           </li>
           <li>
-            <a>Contact Me</a>
+            <a href="#contact">Contact Me</a>
           </li>
         </ul>
       </div>
@@ -70,7 +70,7 @@ const Header = () => {
           href="https://drive.google.com/file/d/1EsvQcZ-IMCKBgL-W9drECCs8nlXJlaZL/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn"
+          className="btn text-white"
         >
           Download Resume
         </a>
