@@ -30,10 +30,10 @@ const Header = () => {
             </li>
 
             <li>
-              <a>About</a>
+              <a href="#about">About</a>
             </li>
             <li>
-              <a>My Projects</a>
+              <a href="#projects">My Projects</a>
             </li>
             <li>
               <a>Skills</a>
@@ -52,10 +52,10 @@ const Header = () => {
           </li>
 
           <li>
-            <a>About</a>
+            <a href="#about">About</a>
           </li>
           <li>
-            <a>My Projects</a>
+            <a href="#projects">My Projects</a>
           </li>
           <li>
             <a>Skills</a>

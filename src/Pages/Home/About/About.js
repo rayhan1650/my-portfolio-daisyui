@@ -3,7 +3,7 @@ import Me from "../../../assets/images/me.png";
 
 const About = () => {
   return (
-    <section className="my-8">
+    <section className="my-8" id="about">
       <h2 className="text-4xl text-center font-bold text-primary">About Me</h2>
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse">
