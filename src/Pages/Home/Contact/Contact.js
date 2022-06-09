@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const {
@@ -9,9 +10,31 @@ const Contact = () => {
     formState: { errors },
     reset,
   } = useForm();
+
+  const form = useRef();
   const onSubmit = (data) => {
-    console.log(data);
+    const info = {
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      message: data.message,
+    };
     reset();
+    emailjs
+      .sendForm(
+        "service_rdp28xo",
+        "template_rv0akea",
+        form.current,
+        "WiSkfZcnTqtsA9vEC"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -23,7 +46,7 @@ const Contact = () => {
               Contact
             </h2>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form ref={form} onSubmit={handleSubmit(onSubmit)}>
               {/* name here  */}
               <div>
                 <input
