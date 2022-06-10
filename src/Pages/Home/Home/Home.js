@@ -5,12 +5,12 @@ import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import Projects from "../Projects/Projects";
 
-const Home = () => {
+const Home = ({ setProject }) => {
   return (
     <>
       <Banner />
       <About />
-      <Projects />
+      <Projects setProject={setProject} />
       <Contact />
       <Footer />
     </>

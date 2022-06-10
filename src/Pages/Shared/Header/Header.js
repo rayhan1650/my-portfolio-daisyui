@@ -31,16 +31,20 @@ const Header = () => {
             </li>
 
             <li>
-              <a href="#about">About</a>
+              <a href="/#about">About</a>
             </li>
             <li>
-              <a href="#projects">My Projects</a>
+              <a href="/#projects">My Projects</a>
+            </li>
+
+            <li>
+              <Link to="/blogs">Blogs</Link>
             </li>
             <li>
               <a>Skills</a>
             </li>
             <li>
-              <a href="#contact">Contact Me</a>
+              <a href="/#contact">Contact Me</a>
             </li>
           </ul>
         </div>
@@ -53,16 +57,21 @@ const Header = () => {
           </li>
 
           <li>
-            <a href="#about">About</a>
+            <a href="/#about">About</a>
           </li>
           <li>
-            <a href="#projects">My Projects</a>
+            <a href="/#projects">My Projects</a>
           </li>
+
+          <li>
+            <Link to="/blogs">Blogs</Link>
+          </li>
+
           <li>
             <a>Skills</a>
           </li>
           <li>
-            <a href="#contact">Contact Me</a>
+            <a href="/#contact">Contact Me</a>
           </li>
         </ul>
       </div>

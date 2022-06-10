@@ -18,7 +18,9 @@ const Footer = () => {
         </defs>
       </Wave>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2">
-        <h1>Hello</h1>
+        <h1 className="text-white text-2xl">
+          &copy; All Right Reserved by Rayhan
+        </h1>
       </div>
     </div>
   );

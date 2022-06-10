@@ -1,18 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 
-const ProjectDetails = () => {
-  const { id } = useParams();
-  const [project, setProject] = useState({});
-  const url = `projects.json/${id}`;
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setProject(data));
-  }, [url]);
+const ProjectDetails = ({ project }) => {
+  const { _id, name, briefDesc, img, link } = project;
+
   return (
-    <div>
-      <h2>Hello</h2>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row">
+        <div>
+          <img src={img} alt="" />
+        </div>
+
+        <div>
+          <h1 className="text-5xl font-bold">{name}</h1>
+          <p className="py-6">{briefDesc}</p>
+          <a
+            href={link}
+            className="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live Link
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
