@@ -3,28 +3,30 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-    reset,
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors },
+  //   reset,
+  // } = useForm();
 
-  const form = useRef();
-  const onSubmit = (data) => {
-    const info = {
-      name: data.name,
-      email: data.email,
-      subject: data.subject,
-      message: data.message,
-    };
-    reset();
+  // const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    // const info = {
+    //   name: data.name,
+    //   email: data.email,
+    //   subject: data.subject,
+    //   message: data.message,
+    // };
+    // console.log(e);
+    // reset();
     emailjs
       .sendForm(
         "service_rdp28xo",
         "template_rv0akea",
-        form.current,
+        e.target,
         "WiSkfZcnTqtsA9vEC"
       )
       .then(
@@ -35,6 +37,7 @@ const Contact = () => {
           console.log(error.text);
         }
       );
+    e.target.reset();
   };
 
   return (
@@ -46,18 +49,19 @@ const Contact = () => {
               Contact
             </h2>
 
-            <form ref={form} onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={sendEmail}>
               {/* name here  */}
               <div>
                 <input
                   type="text"
                   placeholder="Your Name"
                   className="input input-bordered input-primary w-full"
-                  {...register("name", { required: true })}
+                  name="name"
+                  // {...register("name", { required: true })}
                 />
-                {errors.name?.type === "required" && (
+                {/* {errors.name?.type === "required" && (
                   <p className="text-red-500">Name is required</p>
-                )}
+                )} */}
               </div>
 
               {/* email here  */}
@@ -66,11 +70,12 @@ const Contact = () => {
                   type="email"
                   placeholder="Your Email Address"
                   className="input input-bordered input-primary w-full "
-                  {...register("email", { required: true })}
+                  name="email"
+                  // {...register("email", { required: true })}
                 />
-                {errors.email?.type === "required" && (
+                {/* {errors.email?.type === "required" && (
                   <p className="text-red-500">Enter a valid email</p>
-                )}
+                )} */}
               </div>
 
               {/* subject here  */}
@@ -79,11 +84,12 @@ const Contact = () => {
                   type="text"
                   placeholder="Email Subject"
                   className="input input-bordered input-primary w-full"
-                  {...register("subject", { required: true })}
+                  name="subject"
+                  // {...register("subject", { required: true })}
                 />
-                {errors.subject?.type === "required" && (
+                {/* {errors.subject?.type === "required" && (
                   <p className="text-red-500">Subject is required</p>
-                )}
+                )} */}
               </div>
 
               {/* your message  */}
@@ -94,11 +100,12 @@ const Contact = () => {
                   cols="30"
                   rows="7"
                   className="input input-bordered h-full input-primary w-full "
-                  {...register("message", { required: true })}
+                  name="message"
+                  // {...register("message", { required: true })}
                 />
-                {errors.message?.type === "required" && (
+                {/* {errors.message?.type === "required" && (
                   <p className="text-red-500">Message is required</p>
-                )}
+                )} */}
               </div>
               <input
                 className="btn w-full text-white"

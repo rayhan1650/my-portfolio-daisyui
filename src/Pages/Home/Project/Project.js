@@ -1,7 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Project = ({ project }) => {
-  const { name, briefDesc, img } = project;
+  const { _id, name, briefDesc, img } = project;
+  // const navigate = useNavigate();
+  // const handleProject = (id) => {
+  //   navigate(`/home/${id}`);
+  // };
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure>
