@@ -1,34 +1,19 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   watch,
-  //   formState: { errors },
-  //   reset,
-  // } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  // const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
-    // const info = {
-    //   name: data.name,
-    //   email: data.email,
-    //   subject: data.subject,
-    //   message: data.message,
-    // };
-    // console.log(e);
-    // reset();
+  const onSubmit = (data) => {
+    reset();
     emailjs
-      .sendForm(
-        "service_rdp28xo",
-        "template_rv0akea",
-        e.target,
-        "WiSkfZcnTqtsA9vEC"
-      )
+      .send("service_rdp28xo", "template_rv0akea", data, "WiSkfZcnTqtsA9vEC")
       .then(
         (result) => {
           console.log(result.text);
@@ -37,7 +22,6 @@ const Contact = () => {
           console.log(error.text);
         }
       );
-    e.target.reset();
   };
 
   return (
@@ -49,7 +33,7 @@ const Contact = () => {
               Contact
             </h2>
 
-            <form onSubmit={sendEmail}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* name here  */}
               <div>
                 <input
@@ -57,11 +41,11 @@ const Contact = () => {
                   placeholder="Your Name"
                   className="input input-bordered input-primary w-full"
                   name="name"
-                  // {...register("name", { required: true })}
+                  {...register("name", { required: true })}
                 />
-                {/* {errors.name?.type === "required" && (
+                {errors.name?.type === "required" && (
                   <p className="text-red-500">Name is required</p>
-                )} */}
+                )}
               </div>
 
               {/* email here  */}
@@ -71,11 +55,11 @@ const Contact = () => {
                   placeholder="Your Email Address"
                   className="input input-bordered input-primary w-full "
                   name="email"
-                  // {...register("email", { required: true })}
+                  {...register("email", { required: true })}
                 />
-                {/* {errors.email?.type === "required" && (
+                {errors.email?.type === "required" && (
                   <p className="text-red-500">Enter a valid email</p>
-                )} */}
+                )}
               </div>
 
               {/* subject here  */}
@@ -85,11 +69,11 @@ const Contact = () => {
                   placeholder="Email Subject"
                   className="input input-bordered input-primary w-full"
                   name="subject"
-                  // {...register("subject", { required: true })}
+                  {...register("subject", { required: true })}
                 />
-                {/* {errors.subject?.type === "required" && (
+                {errors.subject?.type === "required" && (
                   <p className="text-red-500">Subject is required</p>
-                )} */}
+                )}
               </div>
 
               {/* your message  */}
@@ -101,11 +85,11 @@ const Contact = () => {
                   rows="7"
                   className="input input-bordered h-full input-primary w-full "
                   name="message"
-                  // {...register("message", { required: true })}
+                  {...register("message", { required: true })}
                 />
-                {/* {errors.message?.type === "required" && (
+                {errors.message?.type === "required" && (
                   <p className="text-red-500">Message is required</p>
-                )} */}
+                )}
               </div>
               <input
                 className="btn w-full text-white"
