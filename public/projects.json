@@ -3,21 +3,32 @@
     "_id": 1,
     "name": "Parts Manufacturer",
     "img": "https://i.ibb.co/QF20Q8T/parts-Manufacturer.jpg",
+    "img2": "https://i.ibb.co/zG24cbH/parts-Manufacturer2.jpg",
+    "img3": "https://i.ibb.co/0YQ83qn/parts-Manufacturer3.jpg",
     "briefDesc": "Car Parts Manufacturer is a manufacturer website developed by reactjs and expressjs.",
+    "features": " Home page with banner, parts, review, statistics & two extra section. Private route that required user login for some protected page. Add JWT authentication for some page. Blogs that includes some question & answer. A dashboard to manage user and admin info. Backend server implementation for data management. Connection of database using NodeJs and ExpressJs.",
     "link": "https://parts-manufacturer-95369.web.app"
   },
+
   {
     "_id": 2,
     "name": "Bike House",
     "img": "https://i.ibb.co/qyvDW75/bike-House.jpg",
+    "img2": "https://i.ibb.co/mJhsXRS/bike-House2.jpg",
+    "img3": "https://i.ibb.co/WGJqHv0/bike-House3.jpg",
     "briefDesc": "This is a bike warehouse website. In the home page you see some inventory items with some information.",
+    "features": "Home page with banner, inventory items & two extra section. Private route that required user login to route checkout page. Blogs that includes some question & answer. Manage inventory, add item and my item page. A login and sign up page for user login and sign up.  Authentication with email-password and google. Recovery of forget password & Email verification. Generate JWT and save it to client site. Add JWT authentication to my items page. 404 page not found route.",
     "link": "https://bikehouse1650.web.app"
   },
+
   {
     "_id": 3,
     "name": "Tech Tutor",
     "img": "https://i.ibb.co/wRJfHTS/tech-Tutor.jpg",
+    "img2": "https://i.ibb.co/hfQLRQg/tech-Tutor2.jpg",
+    "img3": "https://i.ibb.co/D9hP3qq/tech-Tutor3.jpg",
     "briefDesc": "Tech Tutor is a individual service provider website developed using Bootstrap and ReactJs.",
+    "features": "Home page with different courses & student's feedback. Private route that required user login to route checkout page. Blogs that includes some question & answer. About page that shows website owner's bio data. A login and sign up page for user login and sign up.Authentication with email-password and google. Recovery of forget password & Email verification. 404 page not found route.",
     "link": "https://techtutor1650.web.app"
   }
 ]
