@@ -11,35 +11,50 @@ const ProjectDetails = () => {
       .then((res) => res.json())
       .then((data) => setProject(data));
   }, [url]);
-  const demo = project?.features?.split(". ");
-  console.log(demo);
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen drop-shadow-lg w-fit mx-auto bg-base-100">
       <div className="hero-content flex-col lg:flex-row">
         <div>
-          <img src={project.img} alt="" />
-          <img className="py-3" src={project.img2} alt="" />
-          <img src={project.img3} alt="" />
+          <div className="drop-shadow-lg hover:ring ring-primary ring-offset-base-100 ring-offset-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+            <img src={project.img} alt="" />
+          </div>
+          <div className="drop-shadow-lg my-5 ring ring-red-600 hover:ring-primary ring-offset-base-100 ring-offset-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+            <img src={project.img2} alt="" />
+          </div>
+          <div className="drop-shadow-lg hover:ring ring-primary ring-offset-base-100 ring-offset-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+            <img src={project.img3} alt="" />
+          </div>
         </div>
 
         <div className=" lg:ml-10">
           <h1 className="text-3xl lg:text-5xl font-bold">{project.name}</h1>
-          <p className="py-6">{project.briefDesc}</p>
+          <p className="py-6 text-lg">{project.briefDesc}</p>
           <h2 className="text-2xl lg:text-4xl font-bold">Project Features</h2>
-          <ol className="list-disc pl-6">
+          <ol className="list-disc pl-6 text-lg">
             {project?.features?.split(". ").map((f, index) => (
               <li key={index}>{f}</li>
             ))}
           </ol>
-          <a
-            href={project.link}
-            className="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live Link
-          </a>
+          <div className="my-4 flex justify-between">
+            <a
+              href={project.link}
+              className="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live Link
+            </a>
+
+            <a
+              href={project.gitLink}
+              className="btn text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Git Link
+            </a>
+          </div>
         </div>
       </div>
     </div>
