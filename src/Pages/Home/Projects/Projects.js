@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../../Shared/Loading/Loading";
 import Project from "../Project/Project";
 
 const Projects = ({ setProject }) => {
@@ -8,6 +9,10 @@ const Projects = ({ setProject }) => {
       .then((res) => res.json())
       .then((data) => setProjects(data));
   }, []);
+
+  if (!projects) {
+    return <Loading />;
+  }
   return (
     <section className="p-3 lg:mx-14 mb-8" id="projects">
       <h2 className="text-4xl text-center font-bold text-primary mb-5">
