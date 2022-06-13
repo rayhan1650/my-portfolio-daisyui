@@ -5,7 +5,7 @@ import Project from "../Project/Project";
 const Projects = ({ setProject }) => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    fetch("https://radiant-oasis-72365.herokuapp.com/projects")
+    fetch("projects.json")
       .then((res) => res.json())
       .then((data) => setProjects(data));
   }, []);
